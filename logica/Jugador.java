@@ -4,6 +4,8 @@ import uno.logica.cartes.Carta;
 
 import java.util.ArrayList;
 
+import java.util.Objects;
+
 public class Jugador {
     private final String nom;
     private ArrayList<Carta> cartes;
@@ -39,5 +41,16 @@ public class Jugador {
             }
         }
         return jugadorPotTirar;
+    }
+
+    public Carta buscarCartaDuplicada(Carta carta) {
+        for (Carta c : cartes) {
+            if (c != carta &&
+                    c.getColor() == carta.getColor() &&
+                    Objects.equals(c.getSimbol(), carta.getSimbol())) {
+                return c;
+            }
+        }
+        return null;
     }
 }

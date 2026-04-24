@@ -232,4 +232,10 @@ public class UI {
         } while (colorEscollit == Carta.Color.Incolor);
         return colorEscollit;
     }
+
+    public static boolean volTirarDues() {
+        System.out.print("Tens una carta idèntica! Vols tirar les dues alhora? (s/n): ");
+        String resposta = input.next().trim().toLowerCase();
+        return resposta.equals("s");
+    }
 }
